@@ -1,8 +1,13 @@
-import "./App.css";
-import { NavProps, Container } from "react-bootstrap";
+import React from "react";
+
+import Navbar from "../src/components/NavBar";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <React.Fragment>
+      <Navbar />
+    </React.Fragment>
+  );
 }
 
 export default App;

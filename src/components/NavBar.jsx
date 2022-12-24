@@ -1,43 +1,30 @@
-export const NavBar = () => {
+import { React, useRef } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import "../styles/style.css";
+
+const Navbar = () => {
+  const navRef = useRef();
+
+  const showNavBar = () => {
+    navRef.current.classList.toogle("responsive_nav");
+  };
   return (
-    <Navbar bg="light" expand="lg">
-      <Container>
-        <Navbar.Brand href="#home">
-          <img src={""} alt="logo" />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav">
-          <span className="navbar-toogle-icon"></span>
-        </Navbar.Toggle>
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#skills">Skills</Nav.Link>
-            <Nav.Link href="#projects">Projects</Nav.Link>
-          </Nav>
-          <span className="navbar-text">
-            <div className="social-icons">
-              <a href="#">
-                <img src={""} alt="" />
-              </a>
-              <a href="#">
-                <img src={""} alt="" />
-              </a>
-              <a href="#">
-                <img src={""} alt="" />
-              </a>
-            </div>
-            <button
-              className="vvd"
-              onClick={() => {
-                console.log("Connect");
-              }}
-            >
-              {" "}
-              <span>Let's Connect</span>{" "}
-            </button>
-          </span>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <header>
+      <h3>Logo</h3>
+      <nav ref={navRef}>
+        <a href="/#">Home</a>
+        <a href="/#">My work</a>
+        <a href="/#">Blog</a>
+        <a href="/#">About Me</a>
+        <button className="nav-btn nav-close-btn" onClick={showNavBar}>
+          <FaTimes />
+        </button>
+        <button className="nav-btn" onClick={showNavBar}>
+          <FaBars />
+        </button>
+      </nav>
+    </header>
   );
 };
+
+export default Navbar;
