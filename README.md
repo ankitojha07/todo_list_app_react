@@ -1,3 +1,3 @@
-# Portfolio Application - Ankit Ojha
+# This is my Todo List
 
-> npm create-react-app portfolio_ankit
+> npm create-react-app todo_list
